@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://wordpress.dev" />
+<title>edd-discount-codes</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">edd-discount-codes</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>http://wordpress.dev/wp-login.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user_login</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user_pass</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=wp-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://wordpress.dev/wp-admin/edit.php?post_type=download&amp;page=edd-discounts&amp;edd-action=add_discount</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeExpression</td>
+	<td>javascript{new Date().getTime();}</td>
+	<td>generated_discount_code</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-name</td>
+	<td>${generated_discount_code}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-code</td>
+	<td>${generated_discount_code}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-amount</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-max-uses</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.button-primary</td>
+	<td>Add Discount Code</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://wordpress.dev</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://wordpress.dev/downloads</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Variable Priced Product</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edd_price_option_145_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=edd_purchase_download</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Checkout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=edd-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-email</td>
+	<td>testuser1@chriskdesigns.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-first</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-last</td>
+	<td>User 1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-discount</td>
+	<td>${generated_discount_code}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edd-purchase-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Thank you for your purchase!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://wordpress.dev/downloads</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Variable Priced Product</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edd_price_option_145_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=edd_purchase_download</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Checkout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=edd-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-email</td>
+	<td>testuser1@chriskdesigns.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-first</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-last</td>
+	<td>User 1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-discount</td>
+	<td>${generated_discount_code}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edd-purchase-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Thank you for your purchase!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://wordpress.dev/downloads</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Variable Priced Product</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edd_price_option_145_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=edd_purchase_download</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Checkout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=edd-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-email</td>
+	<td>testuser1@chriskdesigns.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-first</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-last</td>
+	<td>User 1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-discount</td>
+	<td>${generated_discount_code}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edd-purchase-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Thank you for your purchase!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://wordpress.dev/downloads</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Variable Priced Product</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edd_price_option_145_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=edd_purchase_download</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Checkout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=edd-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-email</td>
+	<td>testuser1@chriskdesigns.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-first</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-last</td>
+	<td>User 1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edd-discount</td>
+	<td>${generated_discount_code}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edd-purchase-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Thank you for your purchase!</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
